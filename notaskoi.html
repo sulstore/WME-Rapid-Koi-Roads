@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WME Rapid Koi Roads - Notas de Atualização</title>
+  <style>
+    :root {
+      --primary-color: #2c58a0;
+      --secondary-color: #f5f5f5;
+      --accent-color: #ff9e1b;
+      --text-color: #333;
+      --border-color: #ddd;
+      --header-bg: #1e3c72;
+      --header-text: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: #f9f9f9;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      background: var(--header-bg);
+      color: var(--header-text);
+      padding: 20px;
+      border-radius: 8px 8px 0 0;
+      margin-bottom: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100px;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(30,60,114,0) 0%, rgba(255,158,27,0.2) 100%);
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 5px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 5px;
+      margin: 25px 0 15px 0;
+      color: var(--primary-color);
+    }
+
+    .version {
+      background-color: #fff;
+      border-radius: 0 0 8px 8px;
+      border: 1px solid var(--border-color);
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .version-header {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 12px 20px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .version-number {
+      font-size: 1.2rem;
+    }
+
+    .version-date {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    .version-content {
+      padding: 15px 20px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding-left: 5px;
+    }
+
+    li {
+      margin-bottom: 8px;
+      position: relative;
+      padding-left: 20px;
+    }
+
+    li::before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.2rem;
+      position: absolute;
+      left: 0;
+      top: -2px;
+    }
+
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: var(--secondary-color);
+      border-radius: 8px;
+      text-align: center;
+      border-top: 3px solid var(--accent-color);
+    }
+
+    .contact {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border-color);
+      font-style: italic;
+    }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
+    .beta-tag {
+      background-color: var(--accent-color);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .early-versions {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .collapsible {
+      background-color: var(--secondary-color);
+      cursor: pointer;
+      padding: 12px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      transition: 0.3s;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+
+    .collapsible:hover {
+      background-color: #e8e8e8;
+    }
+
+    .collapsible:after {
+      content: '\002B';
+      color: var(--primary-color);
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .content {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-out;
+      background-color: #fafafa;
+      border-radius: 0 0 5px 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>WME Rapid Koi Roads</h1>
+    <p>Histórico completo de atualizações</p>
+  </header>
+
+          <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.8.2.1</span>
+        <span class="version-date">12/01/2026</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Corrigido problema que impedia simplificação quando a configuração Nenhum para o nome da cidade estava marcada. Obrigado pelo ajuda pedaleiro_cwb || Fixed an issue that prevented simplification when the "None" setting for the city name was selected. Thanks to pedaleiro_cwb for the help.</li>
+        </ul>
+      </div>
+    </div>
+
+        <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.8.2</span>
+        <span class="version-date">12/01/2026</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Melhorado Simplificação de Segmentos || Improved simplify segments</li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.8.1</span>
+        <span class="version-date">11/01/2026</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Configurações melhoradas que simplificam segmentos || Improved settings that simplify segments</li>
+          <li>Badge de informação criado sobre simplificação || Created an information badge about segment simplification</li>
+          <li>Corrigido posicionamento do Menu de Configurações e Checkbox || Corrected the positioning of the Settings Menu and Checkbox.</li>
+          <li>Corrigido abertura do Street View em OSS || Fixed Street View opening in OSS.</li>
+        </ul>
+      </div>
+    </div>
+  
+    <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.8</span>
+        <span class="version-date">10/01/2026</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>90% migrado para o novo SDK || 90% migrated to the new SDK</li>
+          <li>Ao aprovar novos segmentos KOI, a simplificação de geometria é feita automaticamente || Automatic geometry simplification when approving new segments</li>
+          <li>Criado Badge que indica qual configuração de nova rua está sendo aplicada por padrão || Badge showing the active preset when creating new streets</li>
+          <li>Corrigido Inserção do botão para aprovar/rejeitar OSS (On Segment Suggestions) || Fixed OSS approval/rejection button insertion</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.7.3</span>
+        <span class="version-date">03/09/2025</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Corrigido nomes case sensitive no Linux || Fixed case sensitivity issues on Linux</li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.7.2</span>
+        <span class="version-date">23/08/2025</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Corrigido carregamento para versão Beta WME 2.309 || Fixed loading for Beta version WME 2.309</li>
+          <li>Criado Salvamento Automático ao definir Preset para novas ruas || Created Auto-Save when setting Preset for new streets</li>
+          <li>Na escolha da cidade, grifado cidade atual em Azul || Blue Highlighted current city in city selection</li>
+          <li>Melhorado lógica para exibição das escolhas de cidade || Improved logic for displaying city choices</li>
+          <li>Utilizado Vite para minificação || Used Vite for minification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="version">
+      <div class="version-header">
+        <span class="version-number">v0.7.1</span>
+        <span class="version-date">25/06/2025</span>
+      </div>
+      <div class="version-content">
+        <ul>
+          <li>Removido alert() quando há nome de cidade || Removed alert() when city name is present</li>
+        </ul>
+      </div>
+    </div>
+
+      <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.7</span>
+      <span class="version-date">20/06/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Corrigido Escolha da cidade quando múltiplos segmentos KOI estão selecionados || Fixed City selection when multiple KOI segments are selected</li>
+        <li>Melhorado Visualização dos Botões conforme cor escolhida || Improved Button display according to the selected color</li>
+        <li>Opção para abrir Street View Automaticamente ao atender On Segment Suggestion com opção de pressionar CTRL ao clicar para desativar temporariamente || Option to automatically open Street View on Segment Suggestion, with the ability to hold CTRL while clicking to temporarily disable</li>
+        <li>Opção para esconder os ícones de KOI no mapa || Option to hide KOI icons on the map</li>
+        <li>Incluído opção para importar e exportar configurações || Added option to import and export settings</li>
+        <li>Migrado Parcialmente o Script para o novo SDK || Partially migrated the script to the new SDK</li>
+        <li>Criado Tradução para todos os idiomas do WME || Created translations for all WME languages</li>
+      </ul>
+    </div>
+  </div>
+
+    <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.6</span>
+      <span class="version-date">14/05/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Estilo CSS está usando Media Query</li> 
+        <li>Atualizado Layout das Notas de Lançamento</li>
+        <li>Criado novo botão para ajustar Geometria de novos segmentos de KOI</li>
+        <li>Salva Automaticamente mudanças em botões de checkbox e Radio</li>
+        <li>Corrigido carregamento do Menu em revisões de OSS</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4.5</span>
+      <span class="version-date">23/03/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Tradução para PT_pt revisada por linguasaltitante. Obrigado.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4.4</span>
+      <span class="version-date">10/03/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Ao criar segmento não dirigível, quando a função padrão estava ativa, o script alterava a via não dirigível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4.3</span>
+      <span class="version-date">05/03/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Correção na execução inicial do script.</li>
+        <li>Ajustados atributos para Túnel e Faróis.</li>
+        <li>Reestilizado notas de Lançamento.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4.2</span>
+      <span class="version-date">04/03/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Corrigida atualização do campo padrão para novas vias.</li>
+        <li>Ajustado fluxo de configuração para novos usuários.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4.1</span>
+      <span class="version-date">02/03/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Atualizada função de busca de cidade.</li>
+        <li>Adicionadas traduções para novos idiomas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.4</span>
+      <span class="version-date">28/02/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>WME ignora segmentos sem nodeID disponível.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.5.3</span>
+      <span class="version-date">25/02/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Corrigido CTRL+S e Command+S no Salvamento de novas ruas.</li>
+        <li>Incluído Link para as Notas de Lançamento.</li>
+        <li>Opção para definir atributos padrões para criação de nova rua.</li>
+        <li>Salvamento automático ao clicar em Adicionar e Aprovar nas sugestões.</li>
+        <li>Tradução disponível para 26 idiomas.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="version">
+    <div class="version-header">
+      <span class="version-number">v0.1 - v0.5.2</span>
+      <span class="version-date">17/10/2024 - 24/02/2025</span>
+    </div>
+    <div class="version-content">
+      <ul>
+        <li>Versão inicial</li>
+        <li>Definição de Padrões para Aprovar e Recusar</li>
+        <li>Opção para Incluir Botões no Painel de Edição</li>
+        <li>Definição personalizada de cores.</li>
+        <li>Opção para Mover segmentos Koi ao aprovar.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    <p>Para discussões, dúvidas e sugestões, visite o fórum: 
+      <a href="https://www.waze.com/discuss/t/script-wme-rapid-koi-roads/357670" target="_blank">WME Rapid Koi Roads</a>
+    </p>
+    <p class="contact">Para dúvidas, problemas ou sugestões, encaminhe um e-mail para 
+      <a href="mailto:atendimento@sulstore.com.br">atendimento@sulstore.com.br</a> (Michael)
+    </p>
+  </footer>
+</body>
+</html>
